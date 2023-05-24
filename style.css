@@ -30,6 +30,11 @@ body {
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--MAIN-BG-COLOR);
 }
 
 /*
@@ -76,3 +81,125 @@ h6 {
 }
 
 /* END OF CSS RESET */
+
+:root {
+    --MAIN-BG-COLOR: hsl(233, 47%, 7%);
+    --CARD-BG-COLOR: hsl(244, 38%, 16%);
+    --ACCENT-COLOR: hsl(277, 64%, 61%);
+    --IMG-OVERLAY-COLOR: hsla(281, 93%, 23%, 0.6);
+
+    --WHITE: hsl(0, 0%, 100%);
+    --MAIN-PARAGRAPH-COLOR: hsla(0, 0%, 100%, 0.75);
+    --STAT-HEADINGS: hsla(0, 0%, 100%, 0.6);
+
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-container {
+    width: calc(100% - 3rem);
+    background-color: var(--CARD-BG-COLOR);
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+
+.img-part {
+    width: 100%;
+    position: relative;
+}
+
+.img-part>* {
+    width: 100%;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--IMG-OVERLAY-COLOR);
+}
+
+.text-part {
+    padding: 2.4rem 2.1rem;
+    text-align: center;
+}
+
+.top-message {
+    font-size: 1.78rem;
+    color: var(--WHITE);
+    line-height: 2.1rem;
+}
+
+.top-message span {
+    color: var(--ACCENT-COLOR);
+}
+
+.description {
+    color: var(--STAT-HEADINGS);
+    margin-block: 0.85rem 2.5rem;
+    line-height: 1.66rem;
+}
+
+.stats {
+    list-style-type: none;
+    padding: 0;
+}
+
+.stats>* {
+    margin-top: 1.6rem;
+}
+
+.stats-numbers {
+    font-size: 1.55rem;
+    color: var(--WHITE);
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+
+.stats-subject {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    color: var(--STAT-HEADINGS);
+}
+
+@media screen and (min-width: 601px) {
+
+    .main-container {
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 73.9rem;
+    }
+
+    .img-part {
+        max-width: 35.9rem;
+    }
+
+    .text-part {
+        text-align: left;
+        padding-block: min(6.3vw, 4.78rem) 2rem;
+        padding-inline: min(6.6vw, 4.9rem);
+        max-width: 38rem;
+    }
+
+    .top-message {
+        font-size: min(calc(0.6rem + 2vw), 2.3rem);
+        line-height: min(calc(0.5rem + 3vw), 2.9rem);
+        margin-bottom: 1.815rem;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: min(3.2vw, 2.9rem) 3rem 0 0;
+    }
+
+    .description {
+        margin-right: min(3.2vw, 3rem);
+    }
+}
